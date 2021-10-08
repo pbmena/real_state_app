@@ -6,169 +6,118 @@ class PropertyData {
   final String sqm;
   final String review;
   final String description;
-  final String rentImages;
-  final String saleImage;
-  final List<String> imageProperty;
+  /* final String rentImages;
+  final String saleImage; */
+  final String imageProperty;
 
+  PropertyData({
+    required this.available,
+    required this.address,
+    required this.price,
+    required this.city,
+    required this.sqm,
+    required this.review,
+    required this.description,
+    /* this.rentImages,
+    this.saleImage, */
+    required this.imageProperty,
+  });
+}
+
+final getPropertyData = [
   PropertyData(
-    this.available,
-    this.address,
-    this.price,
-    this.city,
-    this.sqm,
-    this.review,
-    this.description,
-    this.rentImages,
-    this.saleImage,
-    this.imageProperty,
-  );
-}
-
-List<PropertyData> getPropertyList() {
-  return <PropertyData>[
-    PropertyData(
-      "SALE",
-      "Clinton Villa",
-      "3,500.00",
-      "Los Angeles",
-      "2,456",
-      "4,4",
-      "The living is easy in this impressive, generously proportioned contemporary residende with lakke and and ocean views, located within a level stroll to the sand and surf.",
-      "assets/images/prop_one.jpg",
-      "assets/images/prop_two.jpg",
-      [
+    available: "SALE",
+    address: "Clinton Villa",
+    price: "3,500.00",
+    city: "Los Angeles",
+    sqm: "2,456",
+    review: "4,4",
+    description:
+        "The living is easy in this impressive, generously proportioned contemporary residende with lakke and and ocean views, located within a level stroll to the sand and surf.",
+    imageProperty: "assets/images/prop_one.jpg",
+    /* [
         "assets/images/prop_three.jpg",
         "assets/images/prop_four.jpg",
         "assets/images/prop_five.jpg",
         "assets/images/prop_one.jpg",
         "assets/images/prop_two.jpg",
-      ],
-    ),
-    PropertyData(
-      "RENT",
-      "Salu House",
-      "4,500.00",
-      "Miami",
-      "3,300",
-      "4.6",
-      "The living is easy in this impressive, generously proportioned contemporary residence with lake and ocean views, located within a level stroll to the sand and surf.",
-      "assets/images/prop_two.jpg",
-      "assets/images/prop_three.jpg",
-      [
-        "assets/images/prop_three.jpg",
-        "assets/images/prop_four.jpg",
-        "assets/images/prop_five.jpg",
-        "assets/images/prop_one.jpg",
-        "assets/images/prop_two.jpg",
-      ],
-    ),
-    PropertyData(
-      "RENT",
-      "Salu House",
-      "3,500.00",
-      "Miami",
-      "3,300",
-      "4.6",
-      "The living is easy in this impressive, generously proportioned contemporary residence with lake and ocean views, located within a level stroll to the sand and surf.",
-      "assets/images/prop_three.jpg",
-      "assets/images/prop_four.jpg",
-      [
-        "assets/images/prop_three.jpg",
-        "assets/images/prop_four.jpg",
-        "assets/images/prop_five.jpg",
-        "assets/images/prop_one.jpg",
-        "assets/images/prop_two.jpg",
-      ],
-    ),
-    PropertyData(
-      "RENT",
-      "Salu House",
-      "3,500.00",
-      "Miami",
-      "3,300",
-      "4.6",
-      "The living is easy in this impressive, generously proportioned contemporary residence with lake and ocean views, located within a level stroll to the sand and surf.",
-      "assets/images/prop_four.jpg",
-      "assets/images/prop_five.jpg",
-      [
-        "assets/images/prop_three.jpg",
-        "assets/images/prop_four.jpg",
-        "assets/images/prop_five.jpg",
-        "assets/images/prop_one.jpg",
-        "assets/images/prop_two.jpg",
-      ],
-    ),
-    PropertyData(
-      "RENT",
-      "Salu House",
-      "3,500.00",
-      "Miami",
-      "3,300",
-      "4.6",
-      "The living is easy in this impressive, generously proportioned contemporary residence with lake and ocean views, located within a level stroll to the sand and surf.",
-      "assets/images/prop_three.jpg",
-      "assets/images/prop_four.jpg",
-      [
-        "assets/images/prop_three.jpg",
-        "assets/images/prop_four.jpg",
-        "assets/images/prop_five.jpg",
-        "assets/images/prop_one.jpg",
-        "assets/images/prop_two.jpg",
-      ],
-    ),
-    PropertyData(
-      "SALE",
-      "Clinton Villa",
-      "3,500.00",
-      "Los Angeles",
-      "2,456",
-      "4,4",
-      "The living is easy in this impressive, generously proportioned contemporary residende with lakke and and ocean views, located within a level stroll to the sand and surf.",
-      "assets/images/prop_one.jpg",
-      "assets/images/prop_two.jpg",
-      [
-        "assets/images/prop_three.jpg",
-        "assets/images/prop_four.jpg",
-        "assets/images/prop_five.jpg",
-        "assets/images/prop_one.jpg",
-        "assets/images/prop_two.jpg",
-      ],
-    ),
-    PropertyData(
-      "RENT",
-      "Salu House",
-      "3,500.00",
-      "Miami",
-      "3,300",
-      "4.6",
-      "The living is easy in this impressive, generously proportioned contemporary residence with lake and ocean views, located within a level stroll to the sand and surf.",
-      "assets/images/prop_four.jpg",
-      "assets/images/prop_five.jpg",
-      [
-        "assets/images/prop_three.jpg",
-        "assets/images/prop_four.jpg",
-        "assets/images/prop_five.jpg",
-        "assets/images/prop_one.jpg",
-        "assets/images/prop_two.jpg",
-      ],
-    ),
-    PropertyData(
-      "RENT",
-      "Salu House",
-      "4,500.00",
-      "Miami",
-      "3,300",
-      "4.6",
-      "The living is easy in this impressive, generously proportioned contemporary residence with lake and ocean views, located within a level stroll to the sand and surf.",
-      "assets/images/prop_two.jpg",
-      "assets/images/prop_three.jpg",
-      [
-        "assets/images/prop_three.jpg",
-        "assets/images/prop_four.jpg",
-        "assets/images/prop_five.jpg",
-        "assets/images/prop_one.jpg",
-        "assets/images/prop_two.jpg",
-      ],
-    ),
-  ];
-}
+      ], */
+  ),
+  PropertyData(
+    available: "RENT",
+    address: "Salu House",
+    price: "4,500.00",
+    city: "Miami",
+    sqm: "3,300",
+    review: "4.6",
+    description:
+        "The living is easy in this impressive, generously proportioned contemporary residence with lake and ocean views, located within a level stroll to the sand and surf.",
+    imageProperty: "assets/images/prop_two.jpg",
+  ),
+  PropertyData(
+    available: "RENT",
+    address: "Salu House",
+    price: "3,500.00",
+    city: "Miami",
+    sqm: "3,300",
+    review: "4.6",
+    description:
+        "The living is easy in this impressive, generously proportioned contemporary residence with lake and ocean views, located within a level stroll to the sand and surf.",
+    imageProperty: "assets/images/prop_three.jpg",
+  ),
+  PropertyData(
+    available: "RENT",
+    address: "Salu House",
+    price: "3,500.00",
+    city: "Miami",
+    sqm: "3,300",
+    review: "4.6",
+    description:
+        "The living is easy in this impressive, generously proportioned contemporary residence with lake and ocean views, located within a level stroll to the sand and surf.",
+    imageProperty: "assets/images/prop_four.jpg",
+  ),
+  PropertyData(
+    available: "RENT",
+    address: "Salu House",
+    price: "3,500.00",
+    city: "Miami",
+    sqm: "3,300",
+    review: "4.6",
+    description:
+        "The living is easy in this impressive, generously proportioned contemporary residence with lake and ocean views, located within a level stroll to the sand and surf.",
+    imageProperty: "assets/images/prop_five.jpg",
+  ),
+  PropertyData(
+    available: "SALE",
+    address: "Clinton Villa",
+    price: "3,500.00",
+    city: "Los Angeles",
+    sqm: "2,456",
+    review: "4,4",
+    description:
+        "The living is easy in this impressive, generously proportioned contemporary residende with lakke and and ocean views, located within a level stroll to the sand and surf.",
+    imageProperty: "assets/images/prop_one.jpg",
+  ),
+  PropertyData(
+    available: "RENT",
+    address: "Salu House",
+    price: "3,500.00",
+    city: "Miami",
+    sqm: "3,300",
+    review: "4.6",
+    description:
+        "The living is easy in this impressive, generously proportioned contemporary residence with lake and ocean views, located within a level stroll to the sand and surf.",
+    imageProperty: "assets/images/prop_four.jpg",
+  ),
+  PropertyData(
+    available: "RENT",
+    address: "Salu House",
+    price: "4,500.00",
+    city: "Miami",
+    sqm: "3,300",
+    review: "4.6",
+    description:
+        "The living is easy in this impressive, generously proportioned contemporary residence with lake and ocean views, located within a level stroll to the sand and surf.",
+    imageProperty: "assets/images/prop_two.jpg",
+  ),
+];

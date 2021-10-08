@@ -15,12 +15,12 @@ class Details extends StatelessWidget {
       body: Stack(
         children: [
           Hero(
-            tag: property.rentImages,
+            tag: property.imageProperty,
             child: Container(
               height: size.height * 0.5,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage(property.rentImages),
+                  image: AssetImage(property.imageProperty),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -212,7 +212,7 @@ class Details extends StatelessWidget {
                                 width: 65,
                                 decoration: BoxDecoration(
                                   image: DecorationImage(
-                                    image: AssetImage(property.saleImage),
+                                    image: AssetImage(property.imageProperty),
                                     fit: BoxFit.cover,
                                   ),
                                   shape: BoxShape.circle,
@@ -308,7 +308,7 @@ class Details extends StatelessWidget {
                         ),
                       ),
                     ),
-                    Expanded(
+                    /* Expanded(
                       child: Padding(
                         padding: EdgeInsets.only(bottom: 24),
                         child: ListView(
@@ -318,7 +318,7 @@ class Details extends StatelessWidget {
                           children: buildPhotos(property.imageProperty),
                         ),
                       ),
-                    ),
+                    ), */
                   ],
                 ),
               ),

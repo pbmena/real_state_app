@@ -3,6 +3,7 @@ import 'package:real_state_app/models/property_data.dart';
 import 'package:real_state_app/pages/details.dart';
 import 'package:real_state_app/widgets/bottom_sheet.dart';
 import 'package:real_state_app/widgets/chip.dart';
+import 'package:real_state_app/widgets/property_card.dart';
 import 'package:real_state_app/widgets/search_bar.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -13,7 +14,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  List<PropertyData> properties = getPropertyList();
+  List<PropertyData> properties = getPropertyData;
 
   @override
   Widget build(BuildContext context) {
@@ -22,92 +23,96 @@ class _HomeScreenState extends State<HomeScreen> {
       body: SafeArea(
         top: true,
         bottom: false,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+        child: Stack(
+          //crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 25, vertical: 10),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            Positioned(
+              child: Column(
                 children: [
-                  SizedBox(
-                      width: MediaQuery.of(context).size.width / 1.4,
-                      child: SearchBar()),
-                  SizedBox(
-                      width: MediaQuery.of(context).size.width / 6.5,
-                      child: BottomSheetCustom())
-                ],
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(top: 16),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Expanded(
-                    child: Container(
-                      height: MediaQuery.of(context).size.height / 20.0,
-                      padding: EdgeInsets.only(right: 25),
-                      child: Stack(
-                        children: [
-                          ChipCustom(),
-                        ],
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        SizedBox(
+                            width: MediaQuery.of(context).size.width / 1.4,
+                            child: SearchBar()),
+                        SizedBox(
+                            width: MediaQuery.of(context).size.width / 6.5,
+                            child: BottomSheetCustom())
+                      ],
+                    ),
+                  ),
+                  SizedBox(height: 15),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Expanded(
+                        child: Container(
+                          height: MediaQuery.of(context).size.height / 20.0,
+                          padding: EdgeInsets.only(right: 25),
+                          child: ChipCustom(),
+                        ),
                       ),
+                    ],
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(
+                        left: 25, top: 25, right: 25, bottom: 12),
+                    child: Row(
+                      children: [
+                        Text(
+                          "Properties",
+                          style: TextStyle(
+                            fontSize: 24,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ],
               ),
             ),
-            Padding(
-              padding:
-                  EdgeInsets.only(left: 25, top: 25, right: 25, bottom: 12),
-              child: Row(
-                children: [
-                  Text(
-                    "Properties",
-                    style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Expanded(
-              child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 25),
-                child: ListView(
-                  physics: BouncingScrollPhysics(),
-                  scrollDirection: Axis.vertical,
-                  children: buildProperties(),
+            Container(
+                margin: EdgeInsets.only(top: 200),
+                padding: EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+                child: buildProperty(PropertyData, int)
+
+                /* ListView(
+                physics: BouncingScrollPhysics(),
+                scrollDirection: Axis.vertical,
+                children: buildProperties(),
+              ), */
                 ),
-              ),
-            ),
+            //SizedBox(height: 400)
           ],
         ),
       ),
     );
   }
-
+/* 
   List<Widget> buildProperties() {
     List<Widget> list = [];
     for (var i = 0; i < properties.length; i++) {
       list.add(Hero(
-          tag: properties[i].rentImages,
+          tag: properties[i].imageProperty,
           child: buildProperty(properties[i], i)));
     }
     return list;
-  }
+  } */
 
-  Widget buildProperty(PropertyData property, int index) {
+  Widget buildProperty(properties, index) {
     return GestureDetector(
       onTap: () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => Details(property: property)),
+          MaterialPageRoute(
+              builder: (context) => Details(property: properties)),
         );
       },
-      child: Card(
+      child: PropertyCard(),
+      /* Card(
         margin: EdgeInsets.only(bottom: 24),
         clipBehavior: Clip.antiAlias,
         shape: RoundedRectangleBorder(
@@ -312,7 +317,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
         ),
-      ),
+      ), */
     );
   }
 }
