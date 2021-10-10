@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 
+import '../utils/utils.dart';
+
 const textChip = [
+  "Any",
   "House",
-  "Price",
-  "Security",
-  "Bedrooms",
-  "Garage",
-  "Swimming Pool",
+  "Apartment",
+  "Townhouse",
+  "Land",
+  "Rural",
 ];
 
 class ChipCustom extends StatelessWidget {
@@ -34,7 +36,7 @@ class ChipCustom extends StatelessWidget {
           Radius.circular(15),
         ),
         border: Border.all(
-          color: Colors.grey,
+          color: colorLight,
           width: 1,
         ),
       ),
@@ -43,7 +45,7 @@ class ChipCustom extends StatelessWidget {
           filter,
           style: TextStyle(
             fontSize: 14,
-            fontWeight: FontWeight.bold,
+            fontWeight: FontWeight.w700,
           ),
         ),
       ),

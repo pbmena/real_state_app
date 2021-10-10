@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+
 import '../models/models.dart';
+import '../utils/utils.dart';
 
 class PropertyFeatures extends StatelessWidget {
   const PropertyFeatures({Key? key}) : super(key: key);
@@ -26,14 +28,14 @@ class PropertyFeatures extends StatelessWidget {
   Widget buildFeatureList(IconData iconData, String text) {
     return Container(
       width: 100,
-      padding: EdgeInsets.only(top: 5),
+      padding: EdgeInsets.only(top: 8),
       margin: EdgeInsets.only(right: 15),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.all(
           Radius.circular(15),
         ),
         border: Border.all(
-          color: Colors.grey,
+          color: colorLight,
           width: 1,
         ),
       ),
@@ -43,14 +45,14 @@ class PropertyFeatures extends StatelessWidget {
             SizedBox(height: 4),
             Icon(
               iconData,
-              color: Colors.yellow[700],
+              color: secondaryColor,
               size: 28,
             ),
             SizedBox(height: 4),
             Text(
               text,
               style: TextStyle(
-                color: Colors.grey[500],
+                color: colorDark,
                 fontSize: 14,
               ),
             ),

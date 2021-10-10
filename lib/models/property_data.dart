@@ -5,7 +5,6 @@ class PropertyData {
   final String city;
   final String sqm;
   final String review;
-  final String description;
   final String imageProperty;
 
   PropertyData({
@@ -15,7 +14,6 @@ class PropertyData {
     required this.city,
     required this.sqm,
     required this.review,
-    required this.description,
     required this.imageProperty,
   });
 }
@@ -28,92 +26,69 @@ final getPropertyData = [
     city: "Los Angeles",
     sqm: "2,456",
     review: "4,4",
-    description:
-        "The living is easy in this impressive, generously proportioned contemporary residende with lakke and and ocean views, located within a level stroll to the sand and surf.",
     imageProperty: "assets/images/prop_one.jpg",
-    /* [
-        "assets/images/prop_three.jpg",
-        "assets/images/prop_four.jpg",
-        "assets/images/prop_five.jpg",
-        "assets/images/prop_one.jpg",
-        "assets/images/prop_two.jpg",
-      ], */
   ),
   PropertyData(
     available: "RENT",
-    address: "Salu House",
+    address: "Hilton House",
     price: "4,500.00",
-    city: "Miami",
+    city: "California",
     sqm: "3,300",
     review: "4.6",
-    description:
-        "The living is easy in this impressive, generously proportioned contemporary residence with lake and ocean views, located within a level stroll to the sand and surf.",
     imageProperty: "assets/images/prop_two.jpg",
   ),
   PropertyData(
     available: "RENT",
-    address: "Salu House",
+    address: "Ibe House",
     price: "3,500.00",
-    city: "Miami",
+    city: "Florida",
     sqm: "3,300",
     review: "4.6",
-    description:
-        "The living is easy in this impressive, generously proportioned contemporary residence with lake and ocean views, located within a level stroll to the sand and surf.",
     imageProperty: "assets/images/prop_three.jpg",
   ),
   PropertyData(
     available: "RENT",
-    address: "Salu House",
+    address: "Clinton Villa",
     price: "3,500.00",
-    city: "Miami",
+    city: "Los Angeles",
     sqm: "3,300",
     review: "4.6",
-    description:
-        "The living is easy in this impressive, generously proportioned contemporary residence with lake and ocean views, located within a level stroll to the sand and surf.",
     imageProperty: "assets/images/prop_four.jpg",
   ),
   PropertyData(
     available: "RENT",
-    address: "Salu House",
-    price: "3,500.00",
-    city: "Miami",
+    address: "Hilton House",
+    price: "1,700.00",
+    city: "California",
     sqm: "3,300",
     review: "4.6",
-    description:
-        "The living is easy in this impressive, generously proportioned contemporary residence with lake and ocean views, located within a level stroll to the sand and surf.",
     imageProperty: "assets/images/prop_five.jpg",
   ),
   PropertyData(
     available: "SALE",
-    address: "Clinton Villa",
+    address: "Ibe House",
     price: "3,500.00",
-    city: "Los Angeles",
+    city: "Florida",
     sqm: "2,456",
     review: "4,4",
-    description:
-        "The living is easy in this impressive, generously proportioned contemporary residende with lakke and and ocean views, located within a level stroll to the sand and surf.",
     imageProperty: "assets/images/prop_one.jpg",
   ),
   PropertyData(
     available: "RENT",
-    address: "Salu House",
-    price: "3,500.00",
-    city: "Miami",
+    address: "Clinton Villa",
+    price: "3,230.00",
+    city: "Los Angeles",
     sqm: "3,300",
     review: "4.6",
-    description:
-        "The living is easy in this impressive, generously proportioned contemporary residence with lake and ocean views, located within a level stroll to the sand and surf.",
     imageProperty: "assets/images/prop_four.jpg",
   ),
   PropertyData(
     available: "RENT",
-    address: "Salu House",
-    price: "4,500.00",
-    city: "Miami",
+    address: "Hilton House",
+    price: "5,000.00",
+    city: "California",
     sqm: "3,300",
     review: "4.6",
-    description:
-        "The living is easy in this impressive, generously proportioned contemporary residence with lake and ocean views, located within a level stroll to the sand and surf.",
     imageProperty: "assets/images/prop_two.jpg",
   ),
 ];

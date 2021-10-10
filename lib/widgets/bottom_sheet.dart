@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:real_state_app/pages/filter.dart';
+import 'package:real_state_app/pages/filter_screen.dart';
+
+import '../utils/utils.dart';
 
 class BottomSheetCustom extends StatefulWidget {
   BottomSheetCustom({Key? key}) : super(key: key);
@@ -16,17 +18,20 @@ class _BottomSheetCustomState extends State<BottomSheetCustom> {
         _showBottomSheet();
       },
       child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 8),
+        padding: const EdgeInsets.symmetric(vertical: 8),
         alignment: Alignment.center,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15),
           border: Border.all(
-              width: 1, color: Colors.grey, style: BorderStyle.solid),
+            width: 1,
+            color: colorLight,
+            style: BorderStyle.solid,
+          ),
         ),
         child: Icon(
           Icons.tune_rounded,
           size: 30,
-          color: Colors.grey,
+          color: colorDark,
         ),
       ),
     );
@@ -34,20 +39,21 @@ class _BottomSheetCustomState extends State<BottomSheetCustom> {
 
   void _showBottomSheet() {
     showModalBottomSheet(
-        context: context,
-        isScrollControlled: true,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(30),
-            topRight: Radius.circular(30),
-          ),
+      context: context,
+      isScrollControlled: true,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(30),
+          topRight: Radius.circular(30),
         ),
-        builder: (BuildContext context) {
-          return Wrap(
-            children: [
-              Filter(),
-            ],
-          );
-        });
+      ),
+      builder: (BuildContext context) {
+        return Wrap(
+          children: [
+            FilterScreen(),
+          ],
+        );
+      },
+    );
   }
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:real_state_app/pages/property_details.dart';
 
 import '../models/models.dart';
+import '../utils/utils.dart';
 
 class PropertyCard extends StatelessWidget {
   const PropertyCard({Key? key}) : super(key: key);
@@ -20,17 +21,17 @@ class PropertyCard extends StatelessWidget {
             itemBuilder: (BuildContext context, index) {
               final cardImageProperty = getPropertyData[index];
               return GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) =>
-                            PropertyDetailsScreen(property: cardImageProperty),
-                      ),
-                    );
-                  },
-                  child:
-                      SrollPropertyCard(cardImageProperty: cardImageProperty));
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>
+                          PropertyDetailsScreen(property: cardImageProperty),
+                    ),
+                  );
+                },
+                child: SrollPropertyCard(cardImageProperty: cardImageProperty),
+              );
             },
           ),
         ),
@@ -90,7 +91,7 @@ class SrollPropertyCard extends StatelessWidget {
       children: [
         Container(
           decoration: BoxDecoration(
-            color: Colors.yellow,
+            color: secondaryColor,
             borderRadius: BorderRadius.all(
               Radius.circular(5),
             ),
@@ -101,9 +102,9 @@ class SrollPropertyCard extends StatelessWidget {
             child: Text(
               "FOR " + cardImageProperty.available,
               style: TextStyle(
-                color: Colors.white,
+                color: backgroundColor,
                 fontSize: 14,
-                fontWeight: FontWeight.bold,
+                fontWeight: FontWeight.w700,
               ),
             ),
           ),
@@ -117,17 +118,17 @@ class SrollPropertyCard extends StatelessWidget {
                 Text(
                   cardImageProperty.address,
                   style: TextStyle(
-                    color: Colors.white,
+                    color: backgroundColor,
                     fontSize: 18,
-                    fontWeight: FontWeight.bold,
+                    fontWeight: FontWeight.w700,
                   ),
                 ),
                 Text(
                   r"$" + cardImageProperty.price,
                   style: TextStyle(
-                    color: Colors.white,
+                    color: backgroundColor,
                     fontSize: 18,
-                    fontWeight: FontWeight.bold,
+                    fontWeight: FontWeight.w700,
                   ),
                 ),
               ],
@@ -140,28 +141,28 @@ class SrollPropertyCard extends StatelessWidget {
                   children: [
                     Icon(
                       Icons.location_on,
-                      color: Colors.white,
+                      color: backgroundColor,
                       size: 14,
                     ),
                     SizedBox(width: 4),
                     Text(
                       cardImageProperty.city,
                       style: TextStyle(
-                        color: Colors.white,
+                        color: backgroundColor,
                         fontSize: 14,
                       ),
                     ),
                     SizedBox(width: 8),
                     Icon(
                       Icons.zoom_out_map,
-                      color: Colors.white,
+                      color: backgroundColor,
                       size: 16,
                     ),
                     SizedBox(width: 4),
                     Text(
                       cardImageProperty.sqm + " sq/m",
                       style: TextStyle(
-                        color: Colors.white,
+                        color: backgroundColor,
                         fontSize: 14,
                       ),
                     ),
@@ -171,14 +172,14 @@ class SrollPropertyCard extends StatelessWidget {
                   children: [
                     Icon(
                       Icons.star,
-                      color: Colors.yellow,
+                      color: secondaryColor,
                       size: 14,
                     ),
                     SizedBox(width: 4),
                     Text(
                       cardImageProperty.review + " Reviews",
                       style: TextStyle(
-                        color: Colors.white,
+                        color: backgroundColor,
                         fontSize: 14,
                       ),
                     ),
@@ -188,16 +189,16 @@ class SrollPropertyCard extends StatelessWidget {
             ),
             Divider(
               height: 15,
-              color: Colors.white,
+              color: backgroundColor,
               thickness: 2,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  "3 Months Lease",
+                  "6 Months Lease",
                   style: TextStyle(
-                    color: Colors.white,
+                    color: backgroundColor,
                     fontSize: 14,
                   ),
                 ),
@@ -208,14 +209,14 @@ class SrollPropertyCard extends StatelessWidget {
                       children: [
                         Icon(
                           Icons.bedroom_child_rounded,
-                          color: Colors.white,
+                          color: backgroundColor,
                           size: 14,
                         ),
                         SizedBox(width: 4),
                         Text(
-                          "2",
+                          "3",
                           style: TextStyle(
-                            color: Colors.white,
+                            color: backgroundColor,
                             fontSize: 14,
                           ),
                         ),
@@ -226,15 +227,17 @@ class SrollPropertyCard extends StatelessWidget {
                       children: [
                         Icon(
                           Icons.hot_tub_rounded,
-                          color: Colors.white,
+                          color: backgroundColor,
                           size: 14,
                         ),
                         SizedBox(width: 4),
-                        Text("1",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 14,
-                            )),
+                        Text(
+                          "2",
+                          style: TextStyle(
+                            color: backgroundColor,
+                            fontSize: 14,
+                          ),
+                        ),
                       ],
                     ),
                     SizedBox(width: 8),
@@ -242,15 +245,17 @@ class SrollPropertyCard extends StatelessWidget {
                       children: [
                         Icon(
                           Icons.car_repair_rounded,
-                          color: Colors.white,
+                          color: backgroundColor,
                           size: 14,
                         ),
                         SizedBox(width: 4),
-                        Text("1",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 14,
-                            )),
+                        Text(
+                          "1",
+                          style: TextStyle(
+                            color: backgroundColor,
+                            fontSize: 14,
+                          ),
+                        ),
                       ],
                     ),
                   ],
