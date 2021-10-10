@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:real_state_app/routes/route_generator.dart';
 
 void main() {
@@ -12,9 +11,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Real State App',
-      theme: ThemeData(
+      /* theme: ThemeData(
         visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
+      ), */
       initialRoute: '/',
       onGenerateRoute: RouteGenerator.generateRoute,
     );

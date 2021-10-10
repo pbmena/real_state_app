@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../models/property_data.dart';
+import '../utils/constants.dart';
+import '../widgets/widgets.dart';
 
 class PropertyDetailsScreen extends StatelessWidget {
   PropertyDetailsScreen({Key? key, required this.property}) : super(key: key);
@@ -342,130 +344,144 @@ class PropertyDetailsScreen extends StatelessWidget {
   }
 
   Widget buildPropertyDetails() => SliverToBoxAdapter(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Padding(
-              padding: EdgeInsets.all(24),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    children: [
-                      Container(
-                        height: 65,
-                        width: 65,
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
-                            image: AssetImage(property.imageProperty),
-                            fit: BoxFit.cover,
+        child: Container(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Padding(
+                padding: EdgeInsets.all(25),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      children: [
+                        Container(
+                          height: 80,
+                          width: 80,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage(property.imageProperty),
+                              fit: BoxFit.cover,
+                            ),
+                            shape: BoxShape.circle,
                           ),
-                          shape: BoxShape.circle,
                         ),
-                      ),
-                      SizedBox(width: 16),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            "James Milner",
-                            style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
+                        SizedBox(width: 10),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "Mr. Property",
+                              style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            //SizedBox(height: 2),
+                            Text(
+                              "Owner",
+                              style: TextStyle(
+                                fontSize: 18,
+                                color: Colors.grey[500],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Container(
+                          height: 50,
+                          width: 50,
+                          decoration: BoxDecoration(
+                            color: Colors.yellow[700]!.withOpacity(0.1),
+                            shape: BoxShape.circle,
+                          ),
+                          child: Center(
+                            child: Icon(
+                              Icons.phone,
+                              color: Colors.yellow[700],
+                              size: 20,
                             ),
                           ),
-                          SizedBox(height: 4),
-                          Text(
-                            "Property Owner",
-                            style: TextStyle(
-                              fontSize: 18,
-                              color: Colors.grey[500],
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      Container(
-                        height: 50,
-                        width: 50,
-                        decoration: BoxDecoration(
-                          color: Colors.yellow[700]!.withOpacity(0.1),
-                          shape: BoxShape.circle,
                         ),
-                        child: Center(
-                          child: Icon(
-                            Icons.phone,
-                            color: Colors.yellow[700],
-                            size: 20,
+                        SizedBox(width: 16),
+                        Container(
+                          height: 50,
+                          width: 50,
+                          decoration: BoxDecoration(
+                            color: Colors.yellow[700]!.withOpacity(0.1),
+                            shape: BoxShape.circle,
+                          ),
+                          child: Center(
+                            child: Icon(Icons.message,
+                                color: Colors.yellow[700], size: 20),
                           ),
                         ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 10),
+              PropertyFeatures(),
+              SizedBox(height: 25),
+
+              /* Padding(
+                padding: EdgeInsets.only(left: 25, right: 25, bottom: 30),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    buildFeature(Icons.hotel, "2 Bedroom"),
+                    buildFeature(Icons.wc, "2 Bathroom"),
+                    buildFeature(Icons.kitchen, "2 Kitchen"),
+                    buildFeature(Icons.local_parking, "1 Parking"),
+                  ],
+                ),
+              ), */
+              Padding(
+                padding: EdgeInsets.only(left: 25, right: 25, bottom: 25),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Description",
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
                       ),
-                      SizedBox(width: 16),
-                      Container(
-                        height: 50,
-                        width: 50,
-                        decoration: BoxDecoration(
-                          color: Colors.yellow[700]!.withOpacity(0.1),
-                          shape: BoxShape.circle,
-                        ),
-                        child: Center(
-                          child: Icon(Icons.message,
-                              color: Colors.yellow[700], size: 20),
-                        ),
-                      ),
-                    ],
+                    ),
+                    SizedBox(height: 5),
+                    Text(PROPERTY_DESCRIPTION)
+                  ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(left: 25, right: 25, bottom: 16),
+                child: Text(
+                  "Photos",
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
                   ),
-                ],
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(left: 25, right: 25, bottom: 25),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  buildFeature(Icons.hotel, "3 Bedroom"),
-                  buildFeature(Icons.wc, "3 Bathroom"),
-                  buildFeature(Icons.kitchen, "3 Kitchen"),
-                  buildFeature(Icons.local_parking, "2 Parking"),
-                ],
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(left: 25, right: 25, bottom: 16),
-              child: Text(
-                "Description",
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
                 ),
               ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(left: 25, right: 25, bottom: 16),
-              child: Text(
-                "Photos",
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
-            /* Expanded(
-                      child: Padding(
-                        padding: EdgeInsets.only(bottom: 24),
-                        child: ListView(
-                          physics: BouncingScrollPhysics(),
-                          scrollDirection: Axis.horizontal,
-                          shrinkWrap: true,
-                          children: buildPhotos(property.imageProperty),
+              /* Expanded(
+                        child: Padding(
+                          padding: EdgeInsets.only(bottom: 24),
+                          child: ListView(
+                            physics: BouncingScrollPhysics(),
+                            scrollDirection: Axis.horizontal,
+                            shrinkWrap: true,
+                            children: buildPhotos(property.imageProperty),
+                          ),
                         ),
-                      ),
-                    ), */
-          ],
+                      ), */
+            ],
+          ),
         ),
       );
 
@@ -536,8 +552,8 @@ class CustomAppBarDelegate extends SliverPersistentHeaderDelegate {
       fit: StackFit.expand,
       clipBehavior: Clip.hardEdge,
       children: [
-        backgroundHeader(shrinkOffset, size),
-        headerSpace(shrinkOffset, size, context),
+        Positioned(child: backgroundHeader(shrinkOffset, size)),
+        Positioned(top: 10, child: headerSpace(shrinkOffset, size, context)),
       ],
     );
   }
@@ -549,43 +565,43 @@ class CustomAppBarDelegate extends SliverPersistentHeaderDelegate {
         opacity: disappear(shrinkOffset),
         child: Container(
           height: size.height * 0.35,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 24, vertical: 48),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.pop(context);
-                      },
-                      child: Icon(
-                        Icons.arrow_back_ios,
-                        color: Colors.white,
-                        size: 24,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 12),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 20),
+                  child: Row(
+                    children: [
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.pop(context);
+                        },
+                        child: Icon(
+                          Icons.arrow_back_ios,
+                          color: Colors.white,
+                          size: 24,
+                        ),
                       ),
-                    ),
-                    Icon(
-                      Icons.notifications_none,
-                      color: Colors.white,
-                      size: 28,
-                    ),
-                  ],
+                      /* Icon(
+                        Icons.notifications_none,
+                        color: Colors.white,
+                        size: 28,
+                      ), */
+                    ],
+                  ),
                 ),
-              ),
-              Expanded(child: Container()),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 24, vertical: 8),
-                child: Container(
+                SizedBox(height: size.height / 8.5),
+                Container(
                   decoration: BoxDecoration(
                     color: Colors.yellow[700],
                     borderRadius: BorderRadius.all(
                       Radius.circular(5),
                     ),
                   ),
-                  width: 80,
+                  width: size.width / 5.0,
                   padding: EdgeInsets.symmetric(vertical: 4),
                   child: Center(
                     child: Text(
@@ -598,11 +614,8 @@ class CustomAppBarDelegate extends SliverPersistentHeaderDelegate {
                     ),
                   ),
                 ),
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 24),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
                       property.address,
@@ -612,6 +625,7 @@ class CustomAppBarDelegate extends SliverPersistentHeaderDelegate {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
+                    SizedBox(width: size.width / 3.5),
                     Container(
                       height: 50,
                       width: 50,
@@ -629,30 +643,29 @@ class CustomAppBarDelegate extends SliverPersistentHeaderDelegate {
                     ),
                   ],
                 ),
-              ),
-              Padding(
-                padding:
-                    EdgeInsets.only(left: 25, top: 10, right: 25, bottom: 15),
-                child: Row(
+                Row(
+                  children: [
+                    Icon(
+                      Icons.location_on,
+                      color: Colors.white,
+                      size: 15,
+                    ),
+                    SizedBox(width: 5),
+                    Text(
+                      property.city,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
+                Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Row(
                       children: [
-                        Icon(
-                          Icons.location_on,
-                          color: Colors.white,
-                          size: 15,
-                        ),
-                        SizedBox(width: 5),
-                        Text(
-                          property.city,
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        SizedBox(width: 8),
                         Icon(
                           Icons.zoom_out_map,
                           color: Colors.white,
@@ -669,6 +682,7 @@ class CustomAppBarDelegate extends SliverPersistentHeaderDelegate {
                         ),
                       ],
                     ),
+                    SizedBox(width: size.width / 3.3),
                     Row(
                       children: [
                         Icon(
@@ -689,21 +703,21 @@ class CustomAppBarDelegate extends SliverPersistentHeaderDelegate {
                     ),
                   ],
                 ),
-              ),
-              Align(
-                alignment: Alignment.bottomCenter,
-                child: Container(
-                  height: size.height * 0.02,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(30),
-                      topRight: Radius.circular(30),
+                /* Align(
+                  alignment: Alignment.bottomCenter,
+                  child: Container(
+                    height: size.height * 0.02,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(30),
+                        topRight: Radius.circular(30),
+                      ),
                     ),
                   ),
-                ),
-              )
-            ],
+                ) */
+              ],
+            ),
           ),
         ),
       );
@@ -715,7 +729,7 @@ class CustomAppBarDelegate extends SliverPersistentHeaderDelegate {
             Hero(
               tag: "imgProp", //"property.imageProperty",
               child: Container(
-                height: size.height * 0.5,
+                //height: size.height * 0.5,
                 decoration: BoxDecoration(
                   image: DecorationImage(
                     image: AssetImage(property.imageProperty),

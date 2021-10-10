@@ -6,8 +6,6 @@ class PropertyData {
   final String sqm;
   final String review;
   final String description;
-  /* final String rentImages;
-  final String saleImage; */
   final String imageProperty;
 
   PropertyData({
@@ -18,8 +16,6 @@ class PropertyData {
     required this.sqm,
     required this.review,
     required this.description,
-    /* this.rentImages,
-    this.saleImage, */
     required this.imageProperty,
   });
 }

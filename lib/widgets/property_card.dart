@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:real_state_app/models/property_data.dart';
+import 'package:real_state_app/pages/property_details.dart';
+
+import '../models/models.dart';
 
 class PropertyCard extends StatelessWidget {
   const PropertyCard({Key? key}) : super(key: key);
@@ -17,7 +19,18 @@ class PropertyCard extends StatelessWidget {
             itemCount: getPropertyData.length,
             itemBuilder: (BuildContext context, index) {
               final cardImageProperty = getPropertyData[index];
-              return SrollPropertyCard(cardImageProperty: cardImageProperty);
+              return GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) =>
+                            PropertyDetailsScreen(property: cardImageProperty),
+                      ),
+                    );
+                  },
+                  child:
+                      SrollPropertyCard(cardImageProperty: cardImageProperty));
             },
           ),
         ),

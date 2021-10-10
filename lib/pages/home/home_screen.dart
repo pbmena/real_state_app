@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:real_state_app/models/property_data.dart';
-import 'package:real_state_app/pages/details.dart';
-import 'package:real_state_app/widgets/bottom_sheet.dart';
-import 'package:real_state_app/widgets/chip.dart';
-import 'package:real_state_app/widgets/property_card.dart';
-import 'package:real_state_app/widgets/search_bar.dart';
+
+import '../../widgets/widgets.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({Key? key}) : super(key: key);
@@ -14,7 +10,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  List<PropertyData> properties = getPropertyData;
+  //List<PropertyData> properties = getPropertyData;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +20,7 @@ class _HomeScreenState extends State<HomeScreen> {
         top: true,
         bottom: false,
         child: Stack(
-          //crossAxisAlignment: CrossAxisAlignment.start,
+          fit: StackFit.expand,
           children: [
             Positioned(
               child: Column(
@@ -75,16 +71,16 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             Container(
-                margin: EdgeInsets.only(top: 200),
-                padding: EdgeInsets.symmetric(horizontal: 25, vertical: 10),
-                child: buildProperty(PropertyData, int)
+              margin: EdgeInsets.only(top: 200),
+              padding: EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+              child: Hero(tag: "imgProp", child: PropertyCard()),
 
-                /* ListView(
+              /* ListView(
                 physics: BouncingScrollPhysics(),
                 scrollDirection: Axis.vertical,
                 children: buildProperties(),
               ), */
-                ),
+            ),
             //SizedBox(height: 400)
           ],
         ),
@@ -102,7 +98,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return list;
   } */
 
-  Widget buildProperty(properties, index) {
+  /* Widget buildProperty(properties, index) {
     return GestureDetector(
       onTap: () {
         Navigator.push(
@@ -111,8 +107,8 @@ class _HomeScreenState extends State<HomeScreen> {
               builder: (context) => Details(property: properties)),
         );
       },
-      child: PropertyCard(),
-      /* Card(
+      child: PropertyCard(), */
+  /* Card(
         margin: EdgeInsets.only(bottom: 24),
         clipBehavior: Clip.antiAlias,
         shape: RoundedRectangleBorder(
@@ -318,6 +314,6 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
       ), */
-    );
-  }
+  /*  );
+  } */
 }
