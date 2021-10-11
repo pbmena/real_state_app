@@ -1,9 +1,14 @@
-Flutter - UI Real State
+## Flutter - UI Real State
+
 
 ## Image
-<img src="assets/readme_screen/picture1.png" width=100, align = "left">
-<img src="assets/readme_screen/picture2.png" width=100, align = "center">
-<img src="assets/readme_screen/picture3.png" width=100, align = "right">
+<p align="center">
+<img src="assets/readme_screen/picture1.png" width=250>
+<img src="assets/readme_screen/picture2.png" width=250>
+<img src="assets/readme_screen/picture3.png" width=250>
+</p>
+
+
 
 ## Installation
 To clone and run this project:
