@@ -3,9 +3,9 @@
 
 ## Image
 <p align="center">
-<img src="assets/readme_screen/picture1.png" width=250>
-<img src="assets/readme_screen/picture2.png" width=250>
-<img src="assets/readme_screen/picture3.png" width=250>
+<img src="assets/readme_screen/picture1.png" width=200>
+<img src="assets/readme_screen/picture2.png" width=200>
+<img src="assets/readme_screen/picture3.png" width=200>
 </p>
 
 
